@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+        <pattern>TELL ME ABOUT *</pattern>
+        <template>
+            <think><set name="it"><star/></set></think>
+            Here is some information about <star/>.
+            <button>
+                <text> Click Here!!! </text>
+                <url>https://en.wikipedia.org/wiki/<star/></url>
+            </button>
+        </template>
+    </category>
+    <category>
+        <pattern>TELL ME ABOUT IT</pattern>
+        <template>
+            <condition name="it">
+                <li value="*"><srai>Tell me about <get name="it"/></srai></li>
+                <li>Tell you about what?</li>
+            </condition>
+        </template>
+    </category>
+    <category>
+        <pattern>show me a map of *</pattern>
+        <template>
+            Here is the map of <star/>.
+            <button>
+                <text> Click Here</text>
+                <url>https://www.map.google.co.uk/maps?q=<star/></url>
+            </button>
+        </template>
+    </category>
+    <category>
+        <pattern>How is the weather in *</pattern>
+        <template>
+            I hope its a nice day in <star/>.
+            <button>
+                <text> Click for the forecast </text>
+                <url>https://www.weather-forecast.com/locations/<star/>/forecasts/latest</url>
+            </button>
+        </template>
+    </category>
+</aiml>
